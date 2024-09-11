@@ -1,0 +1,22 @@
+.container {
+    padding: 20px;
+  }
+  
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .d-flex {
+    display: flex;
+  }
+  
+  .justify-content-between {
+    justify-content: space-between;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  

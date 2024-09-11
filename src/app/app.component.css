@@ -1,0 +1,33 @@
+/* Example component styles */
+.fw-light {
+    font-weight: 300;
+  }
+  
+  .fw-semibold {
+    font-weight: 600;
+  }
+  
+  .fw-bold {
+    font-weight: 800;
+  }
+  /* Card Image Styling */
+.card img {
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Container and Input Styling */
+.input-group-text {
+  color: hsl(0, 0%, 52%);
+}
+/* Custom Search Input Styles */
+.custom-search-input {
+  border: 1px solid hsl(0, 8%, 86%); /* Border color matching dark gray */
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+  transition: border-color 0.3s;
+}
+
+.custom-search-input:focus {
+  border-color: hsl(200, 15%, 8%); /* Darker border on focus */
+  outline: none;
+}

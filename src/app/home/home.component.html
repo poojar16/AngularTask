@@ -1,0 +1,40 @@
+<div style="background-color: hsl(0, 0%, 98%);">
+    <div>
+        <div class="container">
+            <div class="container-fluid py-4" style="background-color: hsl(0, 0%, 98%);">
+                <div class="row mb-4">
+                    <div class="col-6">
+                        <div class="input-group" style="width: 70% !important;">
+                            <span class="input-group-text bg-transparent border-0">
+                                <i class="bi bi-search"></i>
+                            </span>
+                            <input type="text" class="form-control custom-search-input"
+                                placeholder="Search for a country..." [(ngModel)]="countryName" (change)="search()" />
+                        </div>
+                    </div>
+                    <div class="col-6 text-end">
+                        <select #regionVal (change)="filterRegion(regionVal.value)" class="btn border">
+                            <option value="" selected disabled>Filter by Region</option>
+                            <option *ngFor="let country of region"> {{country}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row container">
+                    <div class="col-12 col-md-4 col-lg-3 mb-4" *ngFor="let country of countriesData;let i=index">
+                        <div class="card shadow-sm" [routerLink]="['/country_details', country.name]" style="height:100%;">
+                            <img [src]="country.flag" class="card-img-top" [alt]="country.name"/>
+                            <div class="card-body">
+                                <h5 class="fw-bold">{{ country.name }}</h5>
+                                <p class="mb-1"><strong>Population:</strong> {{ country.population }}</p>
+                                <p class="mb-1"><strong>Region:</strong> {{ country.region }}</p>
+                                <p class="mb-0"><strong>Capital:</strong> {{ country.capital }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

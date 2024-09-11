@@ -1,0 +1,45 @@
+<div class="container">
+    <!-- Back Button -->
+    <div class="mb-3" (click)="back()">
+      <a routerLink="/home" class="btn border">Back</a>
+    </div>
+    
+    <div class="row">
+      <!-- Left Side: Country Image -->
+      <div class="col-md-4">
+        <img [src]="countryDetail?.flag" alt="{{ countryDetail?.name }} flag" class="img-fluid" />
+      </div>
+      
+      <!-- Right Side: Country Details -->
+      <div class="col-md-8">
+        <h1>{{ countryDetail?.name }}</h1>
+        <p><strong>Native Name:</strong> {{ countryDetail?.nativeName }}</p>
+        
+        <div class="d-flex justify-content-between">
+          <div>
+            <p><strong>Population:</strong> {{ countryDetail?.population }}</p>
+            <p><strong>Region:</strong> {{ countryDetail?.region }}</p>
+            <p><strong>Subregion:</strong> {{ countryDetail?.subregion }}</p>
+            <p><strong>Capital:</strong> {{ countryDetail?.capital }}</p>
+          </div>
+          
+          <div>
+            <p><strong>Top Level Domain:</strong> {{ countryDetail?.topLevelDomain.join(', ') }}</p>
+            <p><strong>Currency:</strong> {{ countryDetail?.currencies[0]?.name }} ({{ countryDetail?.currencies[0]?.symbol }})</p>
+            <p ><strong>Language(s):</strong> 
+              <ng-contaner *ngFor="let lang of countryDetail?.languages;let last=last">
+                  {{lang.name}}<ng-container *ngIf="!last">, </ng-container>
+              </ng-contaner>
+      </p>
+          </div>
+        </div>
+        
+        <!-- Border Countries -->
+        <div class="d-flex align-items-center">
+          <b>Border Countries : </b>
+            <p *ngFor="let border of countryDetail?.borders;let last=last" style="margin-top: 0 !important; margin-bottom: 0 !important;">{{' '+ border+' ' }}<ng-container *ngIf="!last">, </ng-container><p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
